@@ -54,14 +54,14 @@ const allowedRoles = (roles) => (req, res, next) => {
 
 route.get("/user",
   passport.authenticate("jwt", { session: false }),
-  allowedRoles([ "user", "admin" ]),
+  // allowedRoles([ "user", "admin" ]),
   (req, res) => {
     res.json(req.user);
   });
 
 route.get("/game",
   passport.authenticate("jwt", { session: false }),
-  allowedRoles([ "admin" ]),
+  // allowedRoles([ "admin" ]),
   (req, res) => {
     res.json(req.user);
   });
